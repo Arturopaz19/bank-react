@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default function Layout (props) {
@@ -15,12 +15,17 @@ export default function Layout (props) {
                             <Link to={'/'}>Inicio</Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link to={'/banks'}>Sucursales</Link>
+                            <Link to={'/banks'}>Bancos</Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Link to={'/branches'}>Sucursales</Link>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            {children}
+            <Container>
+                {children}
+            </Container>
         </div>
     )
 }

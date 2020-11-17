@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import Layout from '../layout'
 
 export default function Home () {
