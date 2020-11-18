@@ -13,6 +13,7 @@ export default function EmployeesContainer () {
     const [loading, setLoading] = useState(true)
     const [isAsc, setIsAsc] = useState(true)
     const [page, setPage] = useState(1)
+    const [isShow, setIsShow] = useState(false)
     const branch = useSelector((state) => state.branch)
 
     const fetchEmployees = async (url) => {
@@ -44,6 +45,10 @@ export default function EmployeesContainer () {
         setPage(page)
     }
 
+    const handleModal = (isShow) => {
+        setIsShow(isShow)
+    }
+
     return (
         <>
         {loading &&
@@ -59,6 +64,8 @@ export default function EmployeesContainer () {
                 callbackFilter={handleFilter} 
                 callbackPage={settingPage}
                 page={page}
+                isShow={isShow}
+                callbackModal={handleModal}
             />
         }
         {!loading && Object.keys(employees).length === 0 &&

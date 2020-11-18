@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Row, Col } from 'react-bootstrap'
+import { Table, Row, Col, Modal, Button } from 'react-bootstrap'
 import IconButton from '@material-ui/core/IconButton'
 import Add from '@material-ui/icons/AddCircle'
 import ArrowDown from '@material-ui/icons/ArrowDownward'
@@ -9,12 +9,14 @@ import Pagination from '@material-ui/lab/Pagination'
 import Layout from '../layout'
 
 export default function Employees (props) {
-    const { employees, branch, isAsc, callbackFilter, page, callbackPage } = props
+    const { employees, branch, isAsc, callbackFilter, page, callbackPage, isShow, callbackModal } = props
     const { count, results } = employees
     
     const handleChange = (event, value) => {
         callbackPage(value)
-      }
+    }
+
+    const handleModal = () => callbackModal(!isShow)
 
     const list = Object.keys(results).map(key => {
         return (
@@ -36,7 +38,7 @@ export default function Employees (props) {
                     <h1>Empleados</h1>
                 </Col>
                 <Col xs={3} sm={3} md={2} lg={2}>
-                    <IconButton aria-label='add-employee' component='span'>
+                    <IconButton aria-label='add-employee' component='span' onClick={handleModal}>
                         <Add />
                     </IconButton>
                 </Col>
@@ -71,6 +73,24 @@ export default function Employees (props) {
                 page={page} 
                 onChange={handleChange} 
             />
+            {isShow &&
+                <Modal show={isShow} onHide={handleModal}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Agregar Empleado</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        Woohoo, you're reading this text in a modal!
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={handleModal}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleModal}>
+                        Save Changes
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
+            }
         </Layout>
     )
 }
