@@ -49,6 +49,12 @@ export default function EmployeesContainer () {
         setIsShow(isShow)
     }
 
+    const handleUpdate = () => {
+        setLoading(true)
+        setIsShow(false)
+        fetchEmployees(`${API}${employeesRoute}?branch=${branch.id}&page=${page}&ordering=${isAsc ? 'pk' : '-pk'}`)
+    }
+
     return (
         <>
         {loading &&
@@ -66,6 +72,7 @@ export default function EmployeesContainer () {
                 page={page}
                 isShow={isShow}
                 callbackModal={handleModal}
+                callbackUpdate={handleUpdate}
             />
         }
         {!loading && Object.keys(employees).length === 0 &&

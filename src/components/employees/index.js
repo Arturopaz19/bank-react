@@ -7,16 +7,19 @@ import ArrowUp from '@material-ui/icons/ArrowUpward'
 import Pagination from '@material-ui/lab/Pagination'
 
 import Layout from '../layout'
+import EmployeeModal from '../../containers/employees/EmployeeModal'
 
 export default function Employees (props) {
-    const { employees, branch, isAsc, callbackFilter, page, callbackPage, isShow, callbackModal } = props
+    const { employees, branch, isAsc, callbackFilter, page, callbackPage, isShow, callbackModal, callbackUpdate } = props
     const { count, results } = employees
     
     const handleChange = (event, value) => {
         callbackPage(value)
     }
 
-    const handleModal = () => callbackModal(!isShow)
+    const handleModal = (event) => callbackModal(event)
+
+    const handleUpdate = () => callbackUpdate()
 
     const list = Object.keys(results).map(key => {
         return (
@@ -74,22 +77,11 @@ export default function Employees (props) {
                 onChange={handleChange} 
             />
             {isShow &&
-                <Modal show={isShow} onHide={handleModal}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Agregar Empleado</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        Woohoo, you're reading this text in a modal!
-                    </Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={handleModal}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={handleModal}>
-                        Save Changes
-                    </Button>
-                    </Modal.Footer>
-                </Modal>
+                <EmployeeModal 
+                    isShow={isShow}
+                    callbackModal={handleModal}
+                    callbackUpdate={handleUpdate}
+                />
             }
         </Layout>
     )

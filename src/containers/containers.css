@@ -32,3 +32,13 @@
   box-shadow: 4px 3px 8px 1px #5a5a5a;
   -webkit-box-shadow: 4px 3px 8px 1px #5a5a5a;
 }
+
+/*  modal section */
+.form-buttons {
+  text-align: right;
+  padding: 5px;
+}
+
+.form-buttons button {
+  margin: 5px;
+}
