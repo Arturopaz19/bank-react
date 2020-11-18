@@ -17,7 +17,6 @@ export default function EmployeesContainer () {
 
     const fetchEmployees = async (url) => {
         try {
-            console.log(url)
             const response = await fetch(url)
             if (response.ok) {
                 const resp = await response.json()
