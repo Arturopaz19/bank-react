@@ -16,6 +16,7 @@ export default function BranchContainer () {
     const [cont, setCont] = useState(0)
     const bankId = useSelector((state) => state.bank)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     useEffect(() => {
         const fetchBranches = async () => {
@@ -47,7 +48,7 @@ export default function BranchContainer () {
 
     const branchClicked = (id) => {
         dispatch(branchSelected(id))
-        // history.push('/branches')
+        history.push('/employees')
     }
 
     return (

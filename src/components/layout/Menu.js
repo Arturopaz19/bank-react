@@ -18,6 +18,9 @@ export default function Menu () {
                     <Nav.Item className={window.location.pathname === '/branches' ? 'nav-current' : ''}>
                         <Link to={'/branches'}>Sucursales</Link>
                     </Nav.Item>
+                    <Nav.Item className={window.location.pathname === '/employees' ? 'nav-current' : ''}>
+                        <Link to={'/employees'}>Empleados</Link>
+                    </Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

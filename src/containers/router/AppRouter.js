@@ -5,6 +5,7 @@ import '../containers.css'
 import Home from '../../components/home/Home'
 import Banks from '../banks/Banks'
 import Branches from '../branches/Branches'
+import Employees from '../employees/Employees'
 
 export default function AppRouter () {
     return (
@@ -12,7 +13,7 @@ export default function AppRouter () {
             <Route exact path={'/'} render={() => <Home />}/>
             <Route exact path={'/banks'} render={() => <Banks />}/>
             <Route exact path={'/branches'} render={() => <Branches />}/>
-            {/* <Route exact path={'/banks/:bankId/employees'} render={() => <Secret />}/>  */}
+            <Route exact path={'/employees'} render={() => <Employees />}/> 
         </Switch>
     )
 }
