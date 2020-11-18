@@ -3,7 +3,6 @@ import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default function Menu () {
-    console.log(window.location.pathname)
     return (
         <Navbar bg="light" expand="lg">
             <Navbar.Brand href={'/'}>Sistema Bancario</Navbar.Brand>
