@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import '../containers.css'
 
 import Home from '../../components/home/Home'
@@ -13,7 +13,8 @@ export default function AppRouter () {
             <Route exact path={'/'} render={() => <Home />}/>
             <Route exact path={'/banks'} render={() => <Banks />}/>
             <Route exact path={'/branches'} render={() => <Branches />}/>
-            <Route exact path={'/employees'} render={() => <Employees />}/> 
+            <Route exact path={'/employees'} render={() => <Employees />}/>
+            <Redirect from='*' to='/' /> 
         </Switch>
     )
 }
