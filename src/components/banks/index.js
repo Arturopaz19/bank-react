@@ -8,8 +8,10 @@ export default function Banks (props) {
         return (
             <Col key={key} className='bank-col' xs={12} sm={6} md={6} lg={6}>
                 <Card className='bank-card' onClick={() => callbackClick(banks[key].pk)}>
+                    <Card.Title>Informacion del Banco:</Card.Title>
                     <Card.Body>
-                        <h4>Banco {banks[key].name}</h4>
+                        <h5>Identificador: {banks[key].pk}</h5>
+                        <h5>Banco {banks[key].name}</h5>
                     </Card.Body>
                 </Card>
             </Col>

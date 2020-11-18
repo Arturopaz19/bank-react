@@ -24,12 +24,14 @@ export default function Branches (props) {
             <>
             {bankId === results[key].bank &&
                 <tr key={key}>
+                    <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>
                 </tr>   
             }
             {bankId === 0 && 
                 <tr key={key}>
+                    <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>
                 </tr>
@@ -43,6 +45,9 @@ export default function Branches (props) {
             <Table responsive striped  hover>
                 <thead>
                     <tr>
+                        <th>
+                            ID
+                        </th>
                         <th>
                             Sucursal
                         </th>
@@ -60,6 +65,7 @@ export default function Branches (props) {
                     }
                     {cont === 0 && bankId !== 0 &&
                         <tr>
+                            <td/>
                             <td>Banco seleccionado no cuenta con sucursales</td>
                             <td/>
                         </tr>

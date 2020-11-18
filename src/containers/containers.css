@@ -20,7 +20,7 @@
 .bank-card {
   margin: 10px;
   padding: 5px;
-  height: 20vh;
+  height: 23vh;
   box-shadow: 4px 3px 8px 1px #969696;
   -webkit-box-shadow: 4px 3px 8px 1px #969696;
 }
@@ -28,7 +28,7 @@
 .bank-card:hover {
   margin: 10px;
   padding: 5px;
-  height: 20vh;
+  height: 23vh;
   box-shadow: 4px 3px 8px 1px #5a5a5a;
   -webkit-box-shadow: 4px 3px 8px 1px #5a5a5a;
 }
