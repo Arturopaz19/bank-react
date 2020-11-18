@@ -43,6 +43,7 @@ export default function Branches (props) {
         <Layout>
             <div className='div-title'>
                 <h1>Sucursales</h1>
+                <p>Selecciona la sucursal sobre la tabla.</p>
             </div>
             <Table responsive striped hover variant='dark'>
                 <thead>

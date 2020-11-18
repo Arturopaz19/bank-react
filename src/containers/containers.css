@@ -19,6 +19,10 @@
   margin-top: 40vh;
 }
 
+.icon-centered {
+  text-align: center;
+}
+
 /* navbar section */
 .nav-item a {
   color: gray;

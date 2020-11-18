@@ -21,6 +21,7 @@ export default function Banks (props) {
         <Layout>
             <div className='div-title'>
                 <h1>Bancos</h1>
+                <p>Selecciona el banco de tu preferencia.</p>
             </div>
             <Row className='bank-row'>
                 {list}
