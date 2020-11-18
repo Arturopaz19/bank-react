@@ -1,3 +1,14 @@
+/*  Layout section */
+.container {
+  width: 100vw;
+  max-width: 100vw;
+  height: 92vh;
+  max-height: 92vh;
+  margin: 0px !important;
+  padding: 0px 50px !important;
+  background-color: #e9ecef;
+}
+
 /* navbar section */
 .nav-item a {
   color: gray;
@@ -42,3 +53,12 @@
 .form-buttons button {
   margin: 5px;
 }
+
+.home-jumbotron {
+  margin: 0px;
+  height: 92vh;
+  color: #000000;
+  background-image: url('../assets/images/bank-system.png');
+  background-size: cover;
+}
+
