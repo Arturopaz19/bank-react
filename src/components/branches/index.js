@@ -23,7 +23,7 @@ export default function Branches (props) {
         return (
             <>
             {bankId === results[key].bank &&
-                <tr key={key} onClick={() => callbackClick(results[key].id)} >
+                <tr key={key} onClick={() => callbackClick(results[key])} >
                     <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>

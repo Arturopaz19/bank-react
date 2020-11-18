@@ -46,8 +46,8 @@ export default function BranchContainer () {
         }
     }, [branches])
 
-    const branchClicked = (id) => {
-        dispatch(branchSelected(id))
+    const branchClicked = (branch) => {
+        dispatch(branchSelected(branch))
         history.push('/employees')
     }
 
@@ -55,7 +55,7 @@ export default function BranchContainer () {
         <>
         {loading &&
             <Layout>
-                <Spinner animation="border" variant="primary" />
+                <Spinner animation='border' variant='primary' />
             </Layout>
         }
         {!loading &&

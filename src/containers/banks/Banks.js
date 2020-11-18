@@ -35,7 +35,7 @@ export default function BankContainer () {
 
     const cardClicked = (id) => {
         dispatch(bankSelected(id))
-        dispatch(branchSelected(0))
+        dispatch(branchSelected({}))
         history.push('/branches')
     }
 

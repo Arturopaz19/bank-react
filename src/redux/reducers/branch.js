@@ -1,4 +1,4 @@
-const initData = 0
+const initData = {}
 
 const branch = (state = initData, action) => {
    switch (action.type) {
