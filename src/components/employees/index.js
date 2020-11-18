@@ -33,19 +33,19 @@ export default function Employees (props) {
     })
     return (
         <Layout>
-            <div>
+            <div className='div-title'>
                 <h3>Sucursal: {branch.id} - {branch.name}</h3>
             </div>
             <Row>
-                <Col xs={6} sm={6} md={8} lg={8}>
+                <Col xs={8} sm={8} md={8} lg={8}>
                     <h1>Empleados</h1>
                 </Col>
-                <Col xs={3} sm={3} md={2} lg={2}>
+                <Col className='icon-centered' xs={2} sm={2} md={2} lg={2}>
                     <IconButton aria-label='add-employee' component='span' onClick={handleModal}>
                         <Add />
                     </IconButton>
                 </Col>
-                <Col xs={3} sm={3} md={2} lg={2}>
+                <Col className='icon-centered' xs={2} sm={2} md={2} lg={2}>
                     {isAsc &&
                         <IconButton aria-label='desc-filter' component='span' onClick={() => callbackFilter(!isAsc)}>
                             <ArrowDown />
@@ -58,7 +58,7 @@ export default function Employees (props) {
                     }
                 </Col>
             </Row>
-            <Table responsive hover striped>
+            <Table responsive hover striped variant='dark'>
                 <thead>
                     <tr>
                         <th>ID</th>

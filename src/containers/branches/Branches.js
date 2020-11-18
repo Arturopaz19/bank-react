@@ -55,7 +55,7 @@ export default function BranchContainer () {
         <>
         {loading &&
             <Layout>
-                <Spinner animation='border' variant='primary' />
+                <Spinner className='spinner-animated' animation='border' variant='secondary' />
             </Layout>
         }
         {!loading &&

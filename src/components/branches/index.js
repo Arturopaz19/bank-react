@@ -30,7 +30,7 @@ export default function Branches (props) {
                 </tr>   
             }
             {bankId === 0 && 
-                <tr key={key} onClick={() => callbackClick(results[key].id)} >
+                <tr key={key} onClick={() => callbackClick(results[key])} >
                     <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>
@@ -41,8 +41,10 @@ export default function Branches (props) {
     })
     return (
         <Layout>
-            <h1>Sucursales</h1>
-            <Table responsive striped  hover>
+            <div className='div-title'>
+                <h1>Sucursales</h1>
+            </div>
+            <Table responsive striped hover variant='dark'>
                 <thead>
                     <tr>
                         <th>

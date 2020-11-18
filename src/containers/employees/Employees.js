@@ -59,7 +59,7 @@ export default function EmployeesContainer () {
         <>
         {loading &&
             <Layout>
-                <Spinner animation='border' variant='primary' />
+                <Spinner className='spinner-animated' animation='border' variant='secondary' />
             </Layout>
         }
         {!loading && Object.keys(employees).length > 0 &&

@@ -5,8 +5,18 @@
   height: 92vh;
   max-height: 92vh;
   margin: 0px !important;
-  padding: 0px 50px !important;
+  padding: 0px 40px !important;
   background-color: #e9ecef;
+}
+
+.div-title {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.spinner-animated {
+  margin-left: 45vw;
+  margin-top: 40vh;
 }
 
 /* navbar section */

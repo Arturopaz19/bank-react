@@ -19,7 +19,9 @@ export default function Banks (props) {
     })
     return (
         <Layout>
-            <h1>Bancos</h1>
+            <div className='div-title'>
+                <h1>Bancos</h1>
+            </div>
             <Row className='bank-row'>
                 {list}
             </Row>
