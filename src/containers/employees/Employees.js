@@ -77,7 +77,9 @@ export default function EmployeesContainer () {
         }
         {!loading && Object.keys(employees).length === 0 &&
             <Layout>
-                <h1>No se encontro información</h1>
+                <div className='div-title'>
+                    <h1>No se encontro información</h1>
+                </div>
             </Layout>
         }
         </>
