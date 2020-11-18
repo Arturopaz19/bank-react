@@ -5,6 +5,12 @@
 }
 
 .nav-item a:hover {
+  color: #555555;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.nav-current.nav-item a{
   color: #000000;
   text-decoration: none;
   padding: 0px 10px;
