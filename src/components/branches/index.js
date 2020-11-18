@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import Layout from '../layout'
 
 export default function Branches (props) {
-    const { branches, cont, bankId } = props
+    const { branches, cont, bankId, callbackClick } = props
     const { results } = branches
     const selector = useSelector((state) => state.bankList)
     
@@ -23,14 +23,14 @@ export default function Branches (props) {
         return (
             <>
             {bankId === results[key].bank &&
-                <tr key={key}>
+                <tr key={key} onClick={() => callbackClick(results[key].id)} >
                     <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>
                 </tr>   
             }
             {bankId === 0 && 
-                <tr key={key}>
+                <tr key={key} onClick={() => callbackClick(results[key].id)} >
                     <td>{results[key].id}</td>
                     <td>Sucursal {results[key].name}</td>
                     <td>Banco {getName(results[key].bank) || results[key].bank}</td>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addBanks, bankSelected } from '../../redux/actions/banks'
+import { branchSelected } from '../../redux/actions/branches'
 
 import Banks from '../../components/banks/'
 
@@ -34,6 +35,7 @@ export default function BankContainer () {
 
     const cardClicked = (id) => {
         dispatch(bankSelected(id))
+        dispatch(branchSelected(0))
         history.push('/branches')
     }
 

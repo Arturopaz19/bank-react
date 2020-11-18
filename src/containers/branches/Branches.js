@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Spinner } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { branchSelected } from '../../redux/actions/branches'
 
 import Branches from '../../components/branches/'
 import Layout from '../../components/layout'
@@ -13,6 +15,7 @@ export default function BranchContainer () {
     const [loading, setLoading] = useState(true)
     const [cont, setCont] = useState(0)
     const bankId = useSelector((state) => state.bank)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const fetchBranches = async () => {
@@ -42,6 +45,11 @@ export default function BranchContainer () {
         }
     }, [branches])
 
+    const branchClicked = (id) => {
+        dispatch(branchSelected(id))
+        // history.push('/branches')
+    }
+
     return (
         <>
         {loading &&
@@ -50,7 +58,7 @@ export default function BranchContainer () {
             </Layout>
         }
         {!loading &&
-            <Branches branches={branches} cont={cont} bankId={bankId} />
+            <Branches branches={branches} cont={cont} bankId={bankId} callbackClick={branchClicked}/>
         }
         </>
     )
